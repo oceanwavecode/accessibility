@@ -8,46 +8,83 @@
  <title>EAA user interface and functionality design questions</title>
 
  <style>
-  body { font-family: Arial, Helvetica, sans-serif; font-size: 1.2rem; }
-  ul li { padding: 1.0rem; }
+  body {font-family: Arial, Helvetica, sans-serif; font-size: 1.2rem;}
+  ul li {padding: 1.0rem;}
+  button {padding: 10px; margin-top: 5px; cursor: pointer; font-size: 1.2rem;}
+  .highlight {background-color: #f6bd90;}
  </style>
+
+ <script>
+    function resetTextSizeButtons() {
+       document.getElementById("defaultTextButton").className = "";
+       document.getElementById("largeTextButton").className = "";
+       document.getElementById("extraLargeTextButton").className = "";
+    }
+
+    function highlight(el) {
+        document.getElementById(el).className = "highlight";
+    }
+
+    function defaultTextSize() {
+       document.getElementById("container").style.fontSize = 1.2+"rem";
+       resetTextSizeButtons();
+       highlight("defaultTextButton");
+    }
+
+    function largeTextSize() {
+       document.getElementById("container").style.fontSize = "x-large";
+       resetTextSizeButtons();
+       highlight("largeTextButton");
+    }
+
+    function extraLargeTextSize() {
+       document.getElementById("container").style.fontSize = "xx-large";
+       resetTextSizeButtons();
+       highlight("extraLargeTextButton");
+    }
+
+ </script>
 </head>
 
 <body>
- <p>Links open in a new tab/window</p>
- <p><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0882" title="Link to European Accessability Act (Opens in a new tab/window)" target="_blank">EAA European Accessability Act</a></p>
-  <p>The European Accessibility Act (EAA) will be implemented June 28, 2025. Will your organisation's digital products and services meet the requirements in time?</p>
+ <div id="container">
+     <button id="defaultTextButton" title="Default Text Size" onclick="defaultTextSize()" class="highlight">Default Text Size</button> 
+     <button id="largeTextButton" title="Large Text" onclick="largeTextSize()">Large Text</button> 
+     <button id="extraLargeTextButton" title="Extra Large Text" onclick="extraLargeTextSize()">Extra Large Text</button>
+     <p><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0882" title="Link to European Accessability Act (Opens in a new tab/window)" target="_blank">EAA European Accessability Act</a> (opens in a new tab/window)</p>
+      <p>The European Accessibility Act (EAA) will be implemented June 28, 2025. Will your organisation's digital products and services meet the requirements in time?</p>
 
-  <h4>You may find the following user interface and functionality design questions useful (questions refer to Section I of Annex I):</h4>
+      <h4>You may find the following user interface and functionality design questions useful (questions refer to Section I of Annex I):</h4>
 
-  <ul>
-   <li>Do your products' user interfaces support multiple sensory channels? Vision, Auditory, Speech, Touch.</li>
+      <ul>
+       <li>Do your products' user interfaces support multiple sensory channels? Vision, Auditory, Speech, Touch.</li>
 
-   <li>Do the user interfaces of your products provide an alternative to speech output/vocal input for communication, operation control, and orientation?</li>
+       <li>Do the user interfaces of your products provide an alternative to speech output/vocal input for communication, operation control, and orientation?</li>
 
-   <li>Do visual elements of your products support flexible magnification, brightness, and contrast?</li>
+       <li>Do visual elements of your products support flexible magnification, brightness, and contrast?</li>
 
-   <li>Can assistive devices be used to navigate the visual elements of your products?</li>
+       <li>Can assistive devices be used to navigate the visual elements of your products?</li>
 
-   <li>Do your products provide an alternative to colour/audio when colour/audio is used to indicate an action, require a response, or identify elements?</li>
+       <li>Do your products provide an alternative to colour/audio when colour/audio is used to indicate an action, require a response, or identify elements?</li>
 
-   <li>Do your products provide volume, speed, and audio clarity options (e.g. reduce audio of other applications)?</li>
+       <li>Do your products provide volume, speed, and audio clarity options (e.g. reduce audio of other applications)?</li>
 
-   <li>Do your products ensure there are no features that require simultaneous controls?</li>
+       <li>Do your products ensure there are no features that require simultaneous controls?</li>
 
-   <li>Does your product include content that could trigger photosensitive seizures?</li>
+       <li>Does your product include content that could trigger photosensitive seizures?</li>
 
-   <li>Does the use of accessibility features ensure the user's privacy?</li>
+       <li>Does the use of accessibility features ensure the user's privacy?</li>
 
-   <li>Does your product solely rely on biometric identification? If so, you will need to provide an alternative.</li>
+       <li>Does your product solely rely on biometric identification? If so, you will need to provide an alternative.</li>
 
-   <li>Are there features within your products that move too fast for some users to interact with?</li>
+       <li>Are there features within your products that move too fast for some users to interact with?</li>
 
-   <li>Do your products provide software and hardware for interfacing with assistive technologies?</li>
+       <li>Do your products provide software and hardware for interfacing with assistive technologies?</li>
 
-   <li>Is your support team able to provide information about the accessible capability of your products and compatibility with assistive technologies?</li>
+       <li>Is your support team able to provide information about the accessible capability of your products and compatibility with assistive technologies?</li>
 
-   <li>Do you engage with users who rely on accessible product features to analyse quantitative and qualitative data to improve product accessibility?</li>
-  </ul>
+       <li>Do you engage with users who rely on accessible product features to analyse quantitative and qualitative data to improve product accessibility?</li>
+      </ul>
+    </div>
 </body>
 </html> 
